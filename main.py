@@ -8,7 +8,8 @@ def main():
     while True:
         response = requests.get(f'https://stopgame.ru/news/all/p{i}')
         soup = BS(response.content, 'html.parser')
-        elements = soup.find('div', class_='list-view').find_all('div', class_='_card_1tbpr_1')
+        elements = soup.find('div', class_='list-view _section-with-pagination_efk0a_1029').find_all('div', class_='_card_8ywn9_1')
+        print(elements)
         if not elements:
             break
         for element in elements:
